@@ -1,0 +1,22 @@
+import React, { Component } from 'react'
+import axios from 'axios'
+
+let product = {
+
+}
+
+let categories = [];
+
+
+axios.get('https://dummyjson.com/products/1').then((res) => {
+  // categories = res.data
+  product = res.data;
+})
+
+export default class Categories extends Component {
+  render() {
+    return (
+      <p> apple{JSON.stringify(product)}</p>
+    )
+  }
+}
