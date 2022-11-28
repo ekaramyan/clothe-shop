@@ -18,8 +18,10 @@ export default class Categories extends Component {
   render() {
     return (
 
-      <> 
-      {JSON.stringify(product)}
+      <>
+        
+        {JSON.stringify(product)}
+        <Button>Show</Button>
       </>
 
 

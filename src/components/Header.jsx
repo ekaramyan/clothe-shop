@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Container, FormControl, Navbar, Form, Button, Nav } from 'react-bootstrap';
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import '.././scss/styles.scss';
 import logo from './img/logo.svg';
+
+import Male from '../pages/Male';
+import Female from '../pages/Female';
+import Kids from '../pages/Kids';
+import Categories from '../pages/Categories';
 
 
 export default class Header extends Component {
@@ -22,10 +27,10 @@ export default class Header extends Component {
                         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                         <Navbar.Collapse id='responsive-navbar-nav'>
                             <Nav className='mr-auto'>
-                                <Nav.Link Link='/all'>Все</Nav.Link>
-                                <Nav.Link Link='/male'>Мужской</Nav.Link>
-                                <Nav.Link Link='/female'>Женский</Nav.Link>
-                                <Nav.Link Link='/kids'>Детский</Nav.Link>
+                                <Nav.Link href='../pages/Categories'>Все</Nav.Link>
+                                <Nav.Link href='../pages/Male'>Мужской</Nav.Link>
+                                <Nav.Link href='../pages/Female'>Женский</Nav.Link>
+                                <Nav.Link href='../pages/Kids'>Детский</Nav.Link>
                             </Nav>
                             <Form className='d-flex'>
                                 <FormControl
@@ -38,15 +43,16 @@ export default class Header extends Component {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-{/* 
+
                 <Router>
-                    <Switch>
-                        <Route exact path='/male' component={Male} />
-                        <Route exact path='/female' component={Female} />
-                        <Route exact path='/kids' component={Kids} />
-                    </Switch>
-                </Router> */}
+                    <Routes>
+                        <Route exact path='../pages/Categories' component={Categories} />
+                        <Route exact path='../pages/Male' component={Male} />
+                        <Route exact path='../pages/Female' component={Female} />
+                        <Route exact path='../pages/Kids' component={Kids} />
+                    </Routes>
+                </Router>
             </>
-        )
+        );
     }
 }
