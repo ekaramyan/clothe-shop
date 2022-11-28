@@ -18,7 +18,9 @@ export default class Categories extends Component {
   render() {
     return (
 
-      <p> apple{JSON.stringify(product)}</p>
+      <> 
+      {JSON.stringify(product)}
+      </>
 
 
     )

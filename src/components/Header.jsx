@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import { Container, FormControl, Navbar, Form, Button, Nav } from 'react-bootstrap'
-import '.././scss/styles.scss'
-import logo from './img/logo.svg'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Container, FormControl, Navbar, Form, Button, Nav } from 'react-bootstrap';
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import '.././scss/styles.scss';
+import logo from './img/logo.svg';
+
 
 export default class Header extends Component {
     render() {
@@ -11,7 +12,7 @@ export default class Header extends Component {
                 <Navbar collapseOnSelect fixed='top' expand='md' bg='light' variant='light' >
                     <Container className='container'>
                         <Navbar.Brand href='/' className="logo">
-                            <img src="logo.svg"
+                            <img src={logo}
                                 alt="logo"
                                 height='30'
                                 width='30'
@@ -21,9 +22,10 @@ export default class Header extends Component {
                         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                         <Navbar.Collapse id='responsive-navbar-nav'>
                             <Nav className='mr-auto'>
-                                <Nav.Link href='/male'>Мужской</Nav.Link>
-                                <Nav.Link href='/female'>Женский</Nav.Link>
-                                <Nav.Link href='/kids'>Детский</Nav.Link>
+                                <Nav.Link Link='/all'>Все</Nav.Link>
+                                <Nav.Link Link='/male'>Мужской</Nav.Link>
+                                <Nav.Link Link='/female'>Женский</Nav.Link>
+                                <Nav.Link Link='/kids'>Детский</Nav.Link>
                             </Nav>
                             <Form className='d-flex'>
                                 <FormControl
@@ -36,15 +38,14 @@ export default class Header extends Component {
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-
+{/* 
                 <Router>
                     <Switch>
                         <Route exact path='/male' component={Male} />
                         <Route exact path='/female' component={Female} />
                         <Route exact path='/kids' component={Kids} />
-
                     </Switch>
-                </Router>
+                </Router> */}
             </>
         )
     }
