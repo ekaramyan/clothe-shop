@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Button } from 'react-bootstrap'
 
 let product = {
 
@@ -16,7 +17,10 @@ axios.get('https://dummyjson.com/products/1').then((res) => {
 export default class Categories extends Component {
   render() {
     return (
+
       <p> apple{JSON.stringify(product)}</p>
+
+
     )
   }
 }
