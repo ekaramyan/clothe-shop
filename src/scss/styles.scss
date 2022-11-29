@@ -14,4 +14,10 @@ $prefix: "mo-";
 }
 @import '_header';
 
-
+.cards{
+    margin-top: 3%;
+   display: flex;
+   flex-wrap: wrap; 
+   justify-content: center;
+   gap: 10px;
+}

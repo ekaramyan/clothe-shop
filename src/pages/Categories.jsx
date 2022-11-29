@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
+import Card from 'react-bootstrap/Card';
 
 let product = {
 
@@ -19,9 +20,54 @@ export default class Categories extends Component {
     return (
 
       <>
-        
-        {JSON.stringify(product)}
-        <Button>Show</Button>
+        {/* {JSON.stringify(product)} */}
+        <Button variant='dark'>Show</Button>
+
+        <div className='cards'>
+          {[
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+            'Light',
+          ].map((variant) => (
+            <Card
+              bg={variant.toLowerCase()}
+              key={variant}
+              text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+              style={{ width: '18rem' }}
+              className="mb-2"
+            >
+              <Card.Header>Header</Card.Header>
+              <Card.Body>
+                <Card.Title>{variant} Card Title </Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up the
+                  bulk of the card's content.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
       </>
 
 
