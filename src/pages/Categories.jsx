@@ -66,7 +66,7 @@ export default class Categories extends Component {
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Card.Header>Header</Card.Header>
+                <Card.Header><img src=''/></Card.Header>
               </Card.Body>
             </Card>
           ))}
