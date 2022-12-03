@@ -9,6 +9,11 @@ import Categories from './pages/Categories'
 
 function App() {
   // const [count, setCount] = useState(0)
+  axios.get('https://dummyjson.com/products/1').then((res)=>{
+
+  })
+
+  
 
   return (
     <>

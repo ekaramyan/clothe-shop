@@ -58,15 +58,13 @@ export default class Categories extends Component {
               className="mb-2"
             // img={variant}
             >
-
               <Card.Body>
                 <Card.Title>{variant} Card Title </Card.Title>
                 <Card.Img src='' />
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the
-                  bulk of the card's content.
+                  image
                 </Card.Text>
-                <Card.Header><img src=''/></Card.Header>
+                <Card.Header>Name</Card.Header>
               </Card.Body>
             </Card>
           ))}
