@@ -10,17 +10,20 @@ let product = {
 let categories = [];
 
 
-axios.get('https://dummyjson.com/products/1').then((res) => {
-  // categories = res.data
-  product = res.data;
-})
+// axios.get('https://dummyjson.com/products/1').then((res) => {
+//   // categories = res.data
+//   product = res.data;
+// })
 
 export default class Categories extends Component {
   render() {
     return (
 
       <>
-        {/* {JSON.stringify(product)} */}
+        {/* {this.props.items.map(product => (
+          // <h1>{product.title}</h1>
+          <Item key={item.id} item={item} />
+        ))} */}
         <Button variant='dark'>Show</Button>
         <Cards />
       </>

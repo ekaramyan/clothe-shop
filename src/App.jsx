@@ -9,11 +9,23 @@ import Categories from './pages/Categories'
 
 function App() {
   // const [count, setCount] = useState(0)
-  axios.get('https://dummyjson.com/products/1').then((res)=>{
 
-  })
+// constructor(props){
+// super(props)
+// this.state = {
+//   items:[
+//     {
+//     id: 1,
+//     img:null,
+//     title:'перчатки',
+//     }
+//   ]
+// }
+// }
 
-  
+  // axios.get('https://dummyjson.com/products/1').then((res)=>{
+
+  // })
 
   return (
     <>
@@ -21,6 +33,7 @@ function App() {
       <Categories />
     </>
   )
+
 }
 
 export default App
