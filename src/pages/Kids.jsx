@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import Cards from '../components/Cards'
 
-export default class Kids extends Component {
-  render() {
-    return (
-      <div>Kids</div>
-    )
-  }
+const Kids = (props) => {
+  return (
+    <div>
+      fdofhv
+    </div >
+  )
 }
+
+export default Kids
