@@ -16,9 +16,8 @@ const Cards = () => {
     // const axios = require('axios');
     const res = axios.get('https://dummyjson.com/products/')
         .then(({ res }) => {
-            this.setState({
-                title: res.data.title,
-            });
+            const title = res.products;
+            this.setState({ title });
         })
         .catch((err) => { })
 
@@ -26,11 +25,11 @@ const Cards = () => {
     return (
 
         <div className='cards'>
-            {res.props.json.map((Card) =>
+            {this.state.title.map((title) =>
                 <Card>
                     <Card.Body>
                         <Card.Title>{Card.title} </Card.Title>
-                        <Card.Img src={Card.Img} />
+                        {/* <Card.Img src={Card.Img} /> */}
                         <Card.Header>Name</Card.Header>
                         <Card.Text>price</Card.Text>
                     </Card.Body>
