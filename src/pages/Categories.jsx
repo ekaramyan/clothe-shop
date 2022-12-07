@@ -38,11 +38,11 @@ const Categories = () => {
   //   }
   // }
 
-  const [jsonData, setJsondata] = useState({})
+  // const [jsonData, setJsondata] = useState({})
 
-  fetch('https://dummyjson.com/products/')
-    .then(res => res.json())
-    .then(json => setJsondata(json));
+  // fetch('https://dummyjson.com/products/')
+  //   .then(res => res.json())
+  //   .then(json => setJsondata(json));
 
 
 

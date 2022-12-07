@@ -1,55 +1,42 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 
-export default class Cards extends Component {
-    render() {
-        return (
-            <div className='cards'>
-                {[
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                    'Light',
-                ].map((variant) => (
-                    <Card
-                        bg={variant.toLowerCase()}
-                        key={variant}
-                        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-                        style={{ width: '18rem' }}
-                        className="mb-2"
-                    // img={variant}
-                    >
-                        <Card.Body>
-                            <Card.Title>{variant} Card Title </Card.Title>
-                            <Card.Img src='' />
-                            <Card.Text>
-                                image
-                            </Card.Text>
-                            <Card.Header>Name</Card.Header>
-                        </Card.Body>
-                    </Card>
-                ))}
-            </div>
-        )
-    }
+
+const Cards = () => {
+
+
+    // const [jsonData, setJsondata] = useState({})
+    // axios.get('https://dummyjson.com/products/')
+    //     .then(res => res.json())
+    //     .then(json => setJsondata(json));
+
+    // console.log(jsonData);
+
+    // const axios = require('axios');
+    const res = axios.get('https://dummyjson.com/products/')
+        .then(({ res }) => {
+            this.setState({
+                title: res.data.title,
+            });
+        })
+        .catch((err) => { })
+
+
+    return (
+
+        <div className='cards'>
+            {res.props.json.map((Card) =>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>{Card.title} </Card.Title>
+                        <Card.Img src={Card.Img} />
+                        <Card.Header>Name</Card.Header>
+                        <Card.Text>price</Card.Text>
+                    </Card.Body>
+                </Card>
+            )}
+        </div>
+    )
 }
+export default Cards
