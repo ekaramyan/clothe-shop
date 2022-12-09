@@ -6,35 +6,35 @@ import { useState } from 'react'
 
 const Categories = () => {
 
-  //   const [cards, createCards] = useState({ title: '', image: '', price: '' })
-  // const addNewCard = (e) => {
-  //   e.preventDefault()
-  //   const newCard = {
-  //     ...post
-  //   }
+  const [cards, setCards] = useState({ title: '', image: '', price: '' })
+  const addNewCard = (e) => {
+    e.preventDefault()
+    const newCard = {
+      ...card
+    }
 
-  //   create(newCard)
-  //   setPost({ title: '', image: '', price: '' })
-  // }
+    //   create(newCard)
+    //   setPost({ title: '', image: '', price: '' })
+    // }
 
-  async function fetchData() {
-    const response = await axios.get('https://dummyjson.com/products/')
-    console.log(response.data)
+    async function fetchData() {
+      const response = await axios.get('https://dummyjson.com/products/')
+      console.log(response.data)
+    }
+
+
+
+
+    return (
+      <div>
+        <br /> <br /> <br /> <br /> <br />
+        {cards.map((card) =>
+          <Cards
+            card={card} key={card.id} />
+        )}
+      </div>
+    )
   }
-
-  // fetchData()
-  // {id: 1, title: "hui", price: 4653}
-  // response.products
-
-
-  return (
-    <div>
-      <br /> <br /> <br /> <br /> <br />
-      {cards.map((card) =>
-        <Cards card={card} key={card.id} />
-      )}
-    </div>
-  )
 }
 //
 export default Categories
