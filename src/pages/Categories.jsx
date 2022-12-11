@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Cards from '../components/Cards'
 import { useState } from 'react'
+import setCards from '../logics/setCards'
+import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 
 
 const Categories = () => {
