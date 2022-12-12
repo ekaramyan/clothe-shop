@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
+import fetchData from '../logics/fetchData';
 
-const Cards = (props) => {
-    console.log(props)
-    return (
-        <div className='card'>
-            <Card >
-                <Card.Body>
-                    <Card.Title>{props.card.title}</Card.Title>
-                    {/* <Card.Img src={Card.Img} /> */}
-                    <Card.Text>{props.card.description}</Card.Text>
-                </Card.Body>
-            </Card>
-        </div>
-    )
+
+class Cards extends React.Component {
+
+    render() {
+        //res = fetchData();
+        //console.log(res)
+        return (
+            <div className='card'>
+                {/* {res.cards.map((products) => */}
+                {/* (<Card > */}
+                    <Card.Body>
+                        {/* <Card.Title>{props.card.title}</Card.Title>
+                        <Card.Img src={Card.Img} />
+                        <Card.Text>{props.card.description}</Card.Text> */}
+                    </Card.Body>
+                {/* </Card>))} */}
+            </div>
+        )
+    }
 }
 export default Cards

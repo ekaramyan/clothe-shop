@@ -3,40 +3,33 @@ import axios from 'axios'
 import Cards from '../components/Cards'
 import { useState } from 'react'
 import setCards from '../logics/setCards'
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+import fetchData from '../logics/fetchData'
+// import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 
 
 const Categories = () => {
 
-  const [cards, setCards] = useState({ title: '', image: '', price: '' })
-  const addNewCard = (e) => {
-    e.preventDefault()
-    const newCard = {
-      ...card
-    }
-
-    //   create(newCard)
-    //   setPost({ title: '', image: '', price: '' })
-    // }
-
-    async function fetchData() {
-      const response = await axios.get('https://dummyjson.com/products/')
-      console.log(response.data)
-    }
+  // const [cards, setCards] = useState({ title: '', image: '', price: '' })
+  // const addNewCard = (e) => {
+  //   e.preventDefault()
+  //   const newCard = {
+  //     ...card
+  //   }
+  //   //   create(newCard)
+  //   //   setPost({ title: '', image: '', price: '' })
+  //   // } 
+  // fetchData()
 
 
 
+  return (
+    <div>
+      <br /> <br /> <br /> <br /> <br />
 
-    return (
-      <div>
-        <br /> <br /> <br /> <br /> <br />
-        {cards.map((card) =>
-          <Cards
-            card={card} key={card.id} />
-        )}
-      </div>
-    )
-  }
+      <Cards />
+
+    </div>
+  )
 }
 //
 export default Categories
