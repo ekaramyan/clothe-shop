@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
-import fetchData from '../logics/fetchData';
-
+import fetchData from './logics/fetchData'
 
 class Cards extends React.Component {
 
     render() {
-        //res = fetchData();
-        //console.log(res)
+        fetchData()
+        console.log(fetchData)
         return (
             <div className='card'>
                 {/* {res.cards.map((products) => */}
