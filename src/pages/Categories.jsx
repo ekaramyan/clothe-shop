@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Cards from '../components/Cards'
+import Cards from '../components/Card'
 import { useState } from 'react'
 import setCards from '../logics/setCards'
 import fetchData from '../logics/fetchData'
@@ -15,12 +15,10 @@ const Categories = () => {
   //   const newCard = {
   //     ...card
   //   }
-  //   //   create(newCard)
-  //   //   setPost({ title: '', image: '', price: '' })
-  //   // } 
+  //   create(newCard)
+  //   setPost({ title: '', image: '', price: '' })
+  // } 
   // fetchData()
-
-
 
   return (
     <div>
@@ -31,5 +29,5 @@ const Categories = () => {
     </div>
   )
 }
-//
+
 export default Categories
