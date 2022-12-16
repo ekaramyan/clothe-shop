@@ -1,22 +1,28 @@
 import axios from "axios";
 import React from 'react'
 import { Component } from "react";
+
 const url = 'https://dummyjson.com/products/';
 
-export default async function fetchData() {
-    
+export default async function fetchData(props) {
+    let fetchProducts = {};
     try {
-        await axios.get(url)
+        const response = await axios.get(url)
+        // console.log(response)
             .then(res => {
-                const products = res.data;
-                this.setState({ products });
+                fetchProducts = res.data.products;
+                // console.log(fetchProducts)
+                // this.setState({ products: fetchProducts });
+                // this.state = {
+                //     fetchProducts: []
+                // }
+                console.log(fetchProducts)
             })
         //let prod = await res.json()
-        console.log(products)
     }
     catch (error) {
         console.error(error);
     }
-
-
+    props = fetchProducts;
+return(fetchProducts)
 }
