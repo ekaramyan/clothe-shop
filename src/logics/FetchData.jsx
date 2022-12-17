@@ -4,7 +4,7 @@ import { Component } from "react";
 
 const url = 'https://dummyjson.com/products/';
 
-export default async function fetchData(props) {
+export default async function fetchData() {
     let fetchProducts = {};
     try {
         const response = await axios.get(url)
@@ -23,6 +23,6 @@ export default async function fetchData(props) {
     catch (error) {
         console.error(error);
     }
-    props = fetchProducts;
+    // props = fetchProducts;
 return(fetchProducts)
 }

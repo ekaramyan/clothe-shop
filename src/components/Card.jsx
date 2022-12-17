@@ -4,16 +4,16 @@ import Card from 'react-bootstrap/Card';
 import fetchData from '../logics/fetchData';
 
 
-const Cards = () => {
+const Cards = (props) => {
+    console.log(props)
     return (
-
         <div className='card' >
             {
                 <Card>
                     <Card.Body>
-                        <Card.Title> {products.title}</Card.Title>
-                        <Card.Img src={product.img} />
-                        <Card.Text>{products.description}</Card.Text>
+                        <Card.Title> {props.products.title}</Card.Title>
+                        {/* <Card.Img src={props.product.img} /> */}
+                        <Card.Text>{props.products.description}</Card.Text>
                     </Card.Body >
                 </Card>
             }
