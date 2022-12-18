@@ -9,13 +9,14 @@ import ClotheList from '../components/ClotheList'
 
 
 
-const Categories = () => {
+const Categories = (fetchProducts) => {
   // console.log(props)
-  const [products, setProducts] = useState([
-    { id: 1, title: 'ibjfwbvihbvrw', description: 'eiuguhqriphufwpih;owasd' },
+  let [products, setProducts] = useState([
+    { id: 1, title: `title`, description: 'eiuguhqriphufwpih;owasd' },
     { id: 2, title: 'ibjfwbvihbvrw', description: 'eiuguhqriphufwpih;owasd' },
     { id: 3, title: 'ibjfwbvihbvrw', description: 'eiuguhqriphufwpih;owasd' }
   ])
+  fetchData()
   // const addNewCard = (e) => {
   //   e.preventDefault()
   //   const newCard = {

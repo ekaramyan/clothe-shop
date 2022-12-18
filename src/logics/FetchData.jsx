@@ -5,16 +5,16 @@ import { Component } from "react";
 const url = 'https://dummyjson.com/products/';
 
 export default async function fetchData() {
-    let fetchProducts = {};
+    // let fetchProducts = {};
     try {
         const response = await axios.get(url)
         // console.log(response)
             .then(res => {
-                fetchProducts = res.data.products;
-                // console.log(fetchProducts)
+               const fetchProducts = res.data.products;
+                console.log(fetchProducts)
                 // this.setState({ products: fetchProducts });
                 // this.state = {
-                //     fetchProducts: []
+                //     products
                 // }
                 console.log(fetchProducts)
             })
