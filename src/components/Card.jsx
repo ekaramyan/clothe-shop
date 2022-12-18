@@ -12,7 +12,7 @@ const Cards = (props) => {
                 <Card>
                     <Card.Body>
                         <Card.Title> {props.products.title}</Card.Title>
-                        {/* <Card.Img src={props.product.img} /> */}
+                        <Card.Img src={props.products.thumbnail} alt={props.products.thumbnail} />
                         <Card.Text>{props.products.description}</Card.Text>
                     </Card.Body >
                 </Card>

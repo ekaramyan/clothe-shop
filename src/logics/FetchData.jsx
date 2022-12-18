@@ -1,28 +1,18 @@
 import axios from "axios";
 import React from 'react'
 import { Component } from "react";
+import setProducts from "./setProducts";
 
-const url = 'https://dummyjson.com/products/';
+export default class productsAPI {
 
-export default async function fetchData() {
-    // let fetchProducts = {};
-    try {
-        const response = await axios.get(url)
-        // console.log(response)
-            .then(res => {
-               const fetchProducts = res.data.products;
-                console.log(fetchProducts)
-                // this.setState({ products: fetchProducts });
-                // this.state = {
-                //     products
-                // }
-                console.log(fetchProducts)
-            })
-        //let prod = await res.json()
+    static async getAll() {
+        const url = 'https://dummyjson.com/products/'
+        try {
+            const res = await axios.get(url)
+            return res.data.products;
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
-    catch (error) {
-        console.error(error);
-    }
-    // props = fetchProducts;
-return(fetchProducts)
 }

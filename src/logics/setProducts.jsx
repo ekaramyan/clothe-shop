@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function setCards() {
+export default function setProducts() {
   return (
     <div>setCards</div>
   )
