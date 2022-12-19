@@ -1,25 +1,27 @@
 import React from 'react'
-import { propTypes } from 'react-bootstrap/esm/Image'
+import { CardGroup, Container, Row } from 'react-bootstrap'
 import Cards from '../components/Card'
-import productsAPI from '../logics/fetchData'
-//import setProducts from '../logics/setProducts'
 
-export default function ClotheList({ products, title }) {
+const ClotheList = ({ products, title }) => {
 
     // const createProduct = (newProduct) => {
     //     setProducts([...products, newProduct])
     // }
-    let id = products
-    console.log(id)
 
     return (
-        <div>
-
+        <div className='clothe-list'>
             <h2>{title}</h2>
-            {products.map((products) => (
-                <Cards key={products.id} products={products} /> //</Cards>
-            ))}
-
+            <Container className='container__clothe'>
+            
+                
+                {products.map((products, id) =>
+                    <Cards key={id} products={products} />
+                )}
+            
+            </Container>
         </div>
     )
 }
+
+
+export default ClotheList

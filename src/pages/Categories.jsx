@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import Cards from '../components/Card'
 import { useState } from 'react'
-//import setProducts from '../logics/setProducts'
 import productsAPI from '../logics/fetchData'
 import ClotheList from '../components/ClotheList'
 import { useEffect } from 'react'
+import { Row, Col, CardGroup } from 'react-bootstrap'
+
 
 
 
@@ -29,13 +28,13 @@ const Categories = () => {
   }
 
   return (
-    <div>
+    <div className='cards__wrapper'>
 
-      <br /> <br /> <br />
       {products.length !== 0
         ? <ClotheList products={products} title={'Вся одежда'} />
         : <p className='not-found'>No products found</p>
       }
+
     </div>
   )
 }
