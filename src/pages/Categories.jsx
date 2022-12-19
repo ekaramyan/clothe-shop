@@ -19,10 +19,10 @@ const Categories = () => {
 
   let [products, setProducts] = useState([{}])
 
-  const addNewProduct = (e) => {
-    e.preventDefault()
-    setProducts([...products, { ...products, id: Date.now() }])
-  }
+  // const addNewProduct = (e) => {
+  //   e.preventDefault()
+  //   setProducts([...products, { ...products, id: Date.now() }])
+  // }
   async function fetchData() {
     const productsShow = await productsAPI.getAll();
     setProducts(productsShow)

@@ -5,14 +5,14 @@ import fetchData from '../logics/fetchData';
 
 
 const Cards = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div className='card' >
             {
                 <Card>
-                    <Card.Body>
+                    <Card.Body key={props.products.id}>
                         <Card.Title> {props.products.title}</Card.Title>
-                        <Card.Img src={props.products.thumbnail} alt={props.products.thumbnail} />
+                        <Card.Img src={props.products.thumbnail} alt='изображение товара' />
                         <Card.Text>{props.products.description}</Card.Text>
                     </Card.Body >
                 </Card>
