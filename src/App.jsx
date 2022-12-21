@@ -3,6 +3,8 @@ import './components/Header'
 import './pages/Categories'
 import Header from './components/Header'
 import Categories from './pages/Categories'
+import Female from './pages/Female'
+import Male from './pages/Male'
 import { Container, Row } from 'react-bootstrap'
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
 
       <Container>
 
-          <Categories />
+        <Categories />
+        <Male />
 
       </Container>
 
