@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import Cards from '../components/Card'
+import React from 'react'
+import ClotheList from '../components/ClotheList'
+import productsAPI from '../logics/FetchData'
+import { useEffect, useState } from 'react'
 
 const Female = (props) => {
   useEffect(() => {
@@ -10,7 +12,7 @@ const Female = (props) => {
   let [products, setProducts] = useState([{}])
 
   async function fetchData() {
-    const productsShow = await productsAPI.getAll();
+    const productsShow = await productsAPI.getFem();
     setProducts(productsShow)
   }
 

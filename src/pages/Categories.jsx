@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { useState } from 'react'
-import productsAPI from '../logics/fetchData'
+import productsAPI from '../logics/FetchData'
 import ClotheList from '../components/ClotheList'
 import { useEffect } from 'react'
 import { Row, Col, CardGroup } from 'react-bootstrap'
@@ -18,10 +18,7 @@ const Categories = () => {
 
   let [products, setProducts] = useState([{}])
 
-  // const addNewProduct = (e) => {
-  //   e.preventDefault()
-  //   setProducts([...products, { ...products, id: Date.now() }])
-  // }
+
   async function fetchData() {
     const productsShow = await productsAPI.getAll();
     setProducts(productsShow)

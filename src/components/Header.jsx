@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, FormControl, Navbar, Form, Button, Nav } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import '.././scss/styles.scss';
 import logo from './img/logo.svg';
 
@@ -13,7 +13,8 @@ import Categories from '../pages/Categories';
 export default class Header extends Component {
     render() {
         return (
-            <>
+
+            <BrowserRouter>
                 <Navbar collapseOnSelect fixed='top' expand='md' bg='light' variant='light' >
                     <Container className='container'>
                         <Navbar.Brand href='/' className="logo">
@@ -27,10 +28,10 @@ export default class Header extends Component {
                         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                         <Navbar.Collapse id='responsive-navbar-nav'>
                             <Nav className='mr-auto'>
-                                <Nav.Link href='../pages/Categories'>Все</Nav.Link>
-                                <Nav.Link href='../pages/Male'>Мужской</Nav.Link>
-                                <Nav.Link href='../pages/Female'>Женский</Nav.Link>
-                                <Nav.Link href='../pages/Kids'>Детский</Nav.Link>
+                                <NavLink className='nav-link' to='/'>Все</NavLink>
+                                <NavLink className='nav-link' to='/male'>Мужской</NavLink>
+                                <NavLink className='nav-link' to='/female'>Женский</NavLink>
+                                <NavLink className='nav-link' to='/kids'>Детский</NavLink>
                             </Nav>
                             <Form className='d-flex'>
                                 <FormControl
@@ -44,15 +45,21 @@ export default class Header extends Component {
                     </Container>
                 </Navbar>
 
-                <Router>
-                    <Routes>
-                        <Route exact path='../pages/Categories' component={Categories} />
-                        <Route exact path='../pages/Male' component={Male} />
-                        <Route exact path='../pages/Female' component={Female} />
-                        <Route exact path='../pages/Kids' component={Kids} />
-                    </Routes>
-                </Router>
-            </>
+                <Routes>
+
+
+                    <Route path='/male' component={Male} element={<Male/>}/>
+
+                    <Route path='/female' component={Female} element={<Female/>}/>
+
+
+                    <Route path='/kids' component={Kids} element={<Kids/>}/>
+
+                    <Route exact path='/' component={Categories} element={<Categories/>}/>
+
+                </Routes>
+            </BrowserRouter>
+
         );
     }
 }

@@ -23,9 +23,11 @@ $prefix: "mo-";
    &__wrapper{
     
     width: 100%;
+    min-width: 100vw;
     display: flex;
     flex-wrap: wrap;
     gap: 10px; 
+    justify-content: center;
    }
 }
 
@@ -61,6 +63,7 @@ $prefix: "mo-";
         flex-direction: row;
         align-items: stretch;
         height: 100%;
+        width: 100%;
         flex: 1 1 33.333%;
     }
 
