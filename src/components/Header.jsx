@@ -4,13 +4,29 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import '.././scss/styles.scss';
 import logo from './img/logo.svg';
 
-import Male from '../pages/Male';
+import Category from '../pages/Category';
 import Female from '../pages/Female';
 import Kids from '../pages/Kids';
 import Categories from '../pages/Categories';
+import axios from 'axios';
 
 
 export default class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { categories: [] };
+    }
+
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000/api/category')
+            .then(res => {
+                this.setState({ categories: res.data.data })
+            })
+    }
+
+    // const fetchCatgeries = axios.get()
+
     render() {
         return (
 
@@ -29,9 +45,19 @@ export default class Header extends Component {
                         <Navbar.Collapse id='responsive-navbar-nav'>
                             <Nav className='mr-auto'>
                                 <NavLink className='nav-link' to='/'>Все</NavLink>
-                                <NavLink className='nav-link' to='/male'>Мужской</NavLink>
+                                {
+                                    this.state.categories.map((category, id) =>
+                                        <NavLink className='nav-link' to={'/category/' + category.id}
+                                            key={id}
+                                        >
+                                            {category.title}
+                                        </NavLink>
+                                    )
+                                }
+
+                                {/* <NavLink className='nav-link' to='/male'>Мужской</NavLink>
                                 <NavLink className='nav-link' to='/female'>Женский</NavLink>
-                                <NavLink className='nav-link' to='/kids'>Детский</NavLink>
+                                <NavLink className='nav-link' to='/kids'>Детский</NavLink> */}
                             </Nav>
                             <Form className='d-flex'>
                                 <FormControl
@@ -47,15 +73,9 @@ export default class Header extends Component {
 
                 <Routes>
 
+                    <Route path='/category/:id' element={<Category />} />
 
-                    <Route path='/male' component={Male} element={<Male/>}/>
-
-                    <Route path='/female' component={Female} element={<Female/>}/>
-
-
-                    <Route path='/kids' component={Kids} element={<Kids/>}/>
-
-                    <Route exact path='/' component={Categories} element={<Categories/>}/>
+                    <Route exact path='/' element={<Categories />} />
 
                 </Routes>
             </BrowserRouter>
