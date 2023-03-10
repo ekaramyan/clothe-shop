@@ -10,7 +10,7 @@ const Cards = (props) => {
                 <Card key={props.products.id} bg={'secondary'} text={'light'}>
                     <Card.Body >
                         <Card.Title> {props.products.title}</Card.Title>
-                        <Card.Img src={props.products.thumbnail} alt='изображение товара' />
+                        <Card.Img src={props.products.image} alt='изображение товара' />
                         <Card.Text>{props.products.description}</Card.Text>
                     </Card.Body >
                 </Card>

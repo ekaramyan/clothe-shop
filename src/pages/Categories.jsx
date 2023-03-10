@@ -18,7 +18,6 @@ const Categories = () => {
 
   let [products, setProducts] = useState([{}])
 
-
   async function fetchData() {
     const productsShow = await productsAPI.getAll();
     setProducts(productsShow)
@@ -27,7 +26,7 @@ const Categories = () => {
   return (
     <div className='cards__wrapper'>
 
-      {products.length !== 0
+      {products?.length !== 0
         ? <ClotheList products={products} title={'Вся одежда'} />
         : <p className='not-found'>No products found</p>
       }

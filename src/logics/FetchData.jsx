@@ -6,10 +6,10 @@ import setProducts from "./setProducts";
 export default class productsAPI {
 
     static async getAll() {
-        const url = 'https://dummyjson.com/products/' //сюда апи со всей одеждой
+        const url = 'http://127.0.0.1:8000/api/category' //сюда апи со всей одеждой
         try {
             const res = await axios.get(url)
-            return res.data.products;
+            return res.data.data;
         }
         catch (error) {
             console.error(error);
@@ -17,7 +17,7 @@ export default class productsAPI {
     }
 
     static async getMale() {
-        const url = 'https://dummyjson.com/products' //сюда апи с мужской одеждой
+        const url = 'http://127.0.0.1:8000/products' //сюда апи с мужской одеждой
         try {
             const res = await axios.get(url)
             return res.data.products; //тут поставь после даты названия поля из апи, где лежат данные
@@ -28,7 +28,7 @@ export default class productsAPI {
     }
 
     static async getFem() {
-        const url = 'https://dummyjson.com/carts' //сюда апи с женской одеждой
+        const url = 'http://127.0.0.1:8000/carts' //сюда апи с женской одеждой
         try {
             const res = await axios.get(url)
             return res.data.carts; //тут поставь после даты названия поля из апи, где лежат данные
@@ -39,7 +39,7 @@ export default class productsAPI {
     }
 
     static async getKids() {
-        const url = 'https://dummyjson.com/carts' //сюда апи с детской одеждой
+        const url = 'http://127.0.0.1:8000/carts' //сюда апи с детской одеждой
         try {
             const res = await axios.get(url)
             return res.data.carts; //тут поставь после даты названия поля из апи, где лежат данные
