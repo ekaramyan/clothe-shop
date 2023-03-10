@@ -1,0 +1,39 @@
+created:
+    - app/Http/Controllers/ProductController.php
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/OrderController.php
+    - app/Http/Controllers/FavoriteController.php
+    - app/Http/Controllers/BasketController.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/OrderControllerTest.php
+    - tests/Feature/Http/Controllers/FavoriteControllerTest.php
+    - tests/Feature/Http/Controllers/BasketControllerTest.php
+    - app/Http/Requests/ProductStoreRequest.php
+    - app/Http/Requests/ProductUpdateRequest.php
+    - app/Http/Requests/CategoryStoreRequest.php
+    - app/Http/Requests/CategoryUpdateRequest.php
+    - app/Http/Requests/OrderStoreRequest.php
+    - app/Http/Requests/OrderUpdateRequest.php
+    - app/Http/Requests/FavoriteStoreRequest.php
+    - app/Http/Requests/FavoriteUpdateRequest.php
+    - app/Http/Requests/BasketStoreRequest.php
+    - app/Http/Requests/BasketUpdateRequest.php
+    - app/Http/Resources/ProductCollection.php
+    - app/Http/Resources/ProductResource.php
+    - app/Http/Resources/CategoryCollection.php
+    - app/Http/Resources/CategoryResource.php
+    - app/Http/Resources/OrderCollection.php
+    - app/Http/Resources/OrderResource.php
+    - app/Http/Resources/FavoriteCollection.php
+    - app/Http/Resources/FavoriteResource.php
+    - app/Http/Resources/BasketCollection.php
+    - app/Http/Resources/BasketResource.php
+updated:
+    - routes/api.php
+models:
+    Product: { id: 'bigInteger unsigned foreign:favorites.product_id', title: string, description: string, price: double, image: string, category_id: 'bigInteger unsigned', created_at: 'timestamp nullable', updated_at: 'timestamp nullable' }
+    Order: { id: 'bigInteger unsigned', product_id: 'bigInteger unsigned', user_id: 'bigInteger unsigned', amount: integer, created_at: 'timestamp nullable', updated_at: 'timestamp nullable' }
+    Category: { id: 'bigInteger unsigned foreign:products.category_id', title: string, description: string, image: string, created_at: 'timestamp nullable', updated_at: 'timestamp nullable' }
+    Basket: { id: 'bigInteger unsigned', user_id: 'bigInteger unsigned', product_id: 'bigInteger unsigned', created_at: 'timestamp nullable', updated_at: 'timestamp nullable' }
+    Favorite: { id: 'bigInteger unsigned', user_id: 'bigInteger unsigned', product_id: 'bigInteger unsigned', created_at: 'timestamp nullable', updated_at: 'timestamp nullable' }

@@ -3,10 +3,6 @@ import { useState } from 'react'
 import productsAPI from '../logics/FetchData'
 import ClotheList from '../components/ClotheList'
 import { useEffect } from 'react'
-import { Row, Col, CardGroup } from 'react-bootstrap'
-
-
-
 
 
 const Categories = () => {
@@ -15,7 +11,6 @@ const Categories = () => {
     fetchData()
   }, []
   )
-
   let [products, setProducts] = useState([{}])
 
 

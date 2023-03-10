@@ -1,0 +1,11 @@
+controllers:
+  Product: 
+    resource: api
+  Category: 
+    resource: api
+  Order: 
+    resource: api
+  Favorite: 
+    resource: api
+  Basket: 
+    resource: api
