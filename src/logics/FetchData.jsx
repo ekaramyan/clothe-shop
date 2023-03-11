@@ -6,7 +6,7 @@ import setProducts from "./setProducts";
 export default class productsAPI {
 
     static async getAll() {
-        const url = 'http://127.0.0.1:8000/api/product' //сюда апи со всей одеждой
+        const url = 'http://127.0.0.1:8000/api/product'
         try {
             const res = await axios.get(url)
             return res.data.data;
@@ -17,10 +17,10 @@ export default class productsAPI {
     }
 
     static async getCategory(id) {
-        const url = 'http://127.0.0.1:8000/api/category/' + id//сюда апи с мужской одеждой
+        const url = `http://127.0.0.1:8000/api/category/${id}`
         try {
             const res = await axios.get(url)
-            return res.data.data; //тут поставь после даты названия поля из апи, где лежат данные
+            return res.data.data;
         }
         catch (error) {
             console.error(error);
