@@ -24,6 +24,11 @@ export default class Header extends Component {
                 this.setState({ categories: res.data.data })
             })
     }
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.id !== prevProps.id) {
+    //         this.fetchData(this.props.id);
+    //     }
+    // }
 
     // const fetchCatgeries = axios.get()
 
