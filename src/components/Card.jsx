@@ -11,7 +11,7 @@ const Cards = (props) => {
                     <Card.Body >
                         <Card.Title> {props.products.title}</Card.Title>
                         <Card.Img src={props.products.image} alt='изображение товара' />
-                        <Card.Text>{props.products.description}</Card.Text>
+                        <Card.Text>{props.products.price}₽</Card.Text>
                     </Card.Body >
                 </Card>
             }

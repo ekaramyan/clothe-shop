@@ -1,7 +1,7 @@
 import React from 'react'
 import ClotheList from '../components/ClotheList'
 import productsAPI from '../logics/FetchData'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 
 
